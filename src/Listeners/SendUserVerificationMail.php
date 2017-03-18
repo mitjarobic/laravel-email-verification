@@ -41,7 +41,7 @@ class SendUserVerificationMail
         if(config('emailverification.listen_registered_event', true)) {
 
             $sent = resolve('Lunaweb\EmailVerification\EmailVerification')->sendVerifyLink($event->user);
-            Session::flash($sent == EmailVerification::VERIFY_LINK_SENT ? 'success' : 'error', trans($sent));
+            //Session::flash($sent == EmailVerification::VERIFY_LINK_SENT ? 'success' : 'error', trans($sent));
 
         }
 
