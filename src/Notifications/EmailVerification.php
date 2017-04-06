@@ -56,7 +56,7 @@ class EmailVerification extends Notification
     public function toMail($notifiable)
     {
         $email = $notifiable->getEmailForEmailVerification();
-        $route = config('emailverification.route', 1440)
+        $route = config('emailverification.route', 1440);
 
         $link = url($route."?email={$email}&expiration={$this->expiration}&token={$this->token}");
         return (new MailMessage)
