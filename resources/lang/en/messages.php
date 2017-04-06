@@ -13,7 +13,7 @@ return [
     
     'notification' =>[
         'thank_you' => 'Thank you for verifying!',
-        'almost_done' => 'You\'re almost done! Please click here to complete your registration:',
+        'almost_done' => 'You\'re almost done! Please click here to complete the verification:',
         'verify' => 'Verify',
     ]
 
