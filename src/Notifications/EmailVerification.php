@@ -56,11 +56,13 @@ class EmailVerification extends Notification
     public function toMail($notifiable)
     {
         $email = $notifiable->getEmailForEmailVerification();
-        $link = url("register/verify?email={$email}&expiration={$this->expiration}&token={$this->token}");
+        $route = config('emailverification.route', 1440)
+
+        $link = url($route."?email={$email}&expiration={$this->expiration}&token={$this->token}");
         return (new MailMessage)
-            ->line('Thank you for signing up with us!')
-            ->line('You\'re almost done! Please click here to complete your registration:')
-            ->action('Complete Registration', $link);
+            ->line(trans('emailverification::thank_you'))
+            ->line(trans('emailverification::almost_done'))
+            ->action(trans('emailverification::verify'), $link);
     }
 
 }
