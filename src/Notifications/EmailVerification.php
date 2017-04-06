@@ -60,9 +60,9 @@ class EmailVerification extends Notification
 
         $link = url($route."?email={$email}&expiration={$this->expiration}&token={$this->token}");
         return (new MailMessage)
-            ->line(trans('emailverification::thank_you'))
-            ->line(trans('emailverification::almost_done'))
-            ->action(trans('emailverification::verify'), $link);
+            ->line(trans('emailverification::messages.notification.thank_you'))
+            ->line(trans('emailverification::messages.notification.almost_done'))
+            ->action(trans('emailverification::messages.notification.verify'), $link);
     }
 
 }
